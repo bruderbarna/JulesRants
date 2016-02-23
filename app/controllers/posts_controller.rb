@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:create, :update, :edit, :destroy]
+  before_action :authenticate_user!, only: [:create, :update, :edit, :destroy, :unpublished_posts]
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.where(published: true).order("created_at DESC")
   end
 
   def new
@@ -38,6 +38,10 @@ class PostsController < ApplicationController
     @post.destroy
 
     redirect_to root_path
+  end
+
+  def unpublished_posts
+    @posts = Post.where(published: false).order("created_at DESC")
   end
 
   private

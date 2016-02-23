@@ -1,6 +1,6 @@
 <h1><%= @post.title %></h1>
 
-<div><%= @post.body %></div>
+<div><%= raw @post.body %></div>
 
 <% if user_signed_in? %>
   <%= link_to "Edit Post", edit_post_path %><br>

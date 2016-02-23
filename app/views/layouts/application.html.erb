@@ -7,19 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-    </li>
-  <% else %>
-    <li>
-    <%= link_to('Login', new_user_session_path)  %>
-    </li>
-  <% end %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div class="container">
+    <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "btn btn-primary") %>
+    <% else %>
+      <%= link_to('Login', new_user_session_path, class: "btn btn-primary")  %>
+    <% end %>
 
-  <%= yield %>
+    <hr>
 
+    <% if !notice.blank? %>
+      <div class="alert alert-warning"><%= notice %></div>
+    <% end %>
+    <% if !alert.blank? %>
+      <div class="alert alert-danger"><%= alert %></div>
+    <% end %>
+
+    <%= yield %>
+  </div>
 </body>
 </html>

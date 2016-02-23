@@ -1,10 +1,19 @@
 <%= form_for @post do |f| %>
-  <%= f.label :title %><br>
-  <%= f.text_field :title, class: "asdasdas" %><br>
-  <br>
-  <%= f.label :body %><br>
-  <%= f.text_area :body %><br>
-  <%= f.check_box :published %><%= f.label :published %>
-  <br>
-  <%= f.button name: "commit", value: "save", type:"submit" %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: "tinymce form-control" %>
+    <%= tinymce %>
+  </div>
+  <div class="form-group">
+    <div class="checkbox">
+      <h4><label><%= f.check_box :published %> Published</label></h4>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.button name: "commit", value: "save", type:"submit" %>
+  </div>
 <% end %>

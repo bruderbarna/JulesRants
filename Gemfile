@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 ruby "2.3.0"
 
+# Bootstrap
+gem 'bootstrap3-rails'
+# Tiny MCE
+gem 'tinymce-rails'
 # Authentication plugin
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
