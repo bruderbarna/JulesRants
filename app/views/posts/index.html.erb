@@ -1,0 +1,6 @@
+<% @posts.each do |post| %>
+  <h1><%= post.title %></h1>
+  <div><%= post.body %></div>
+  <br>
+  <%= link_to "Read Post", post %>
+<% end %>
