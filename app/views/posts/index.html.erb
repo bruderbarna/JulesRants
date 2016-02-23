@@ -1,6 +1,10 @@
-<% @posts.each do |post| %>
-  <h1><%= post.title %></h1>
-  <div><%= post.body %></div>
-  <br>
-  <%= link_to "Read Post", post %>
+<% if @posts.blank? %>
+  <h2>No posts :(</h2>
+<% else %>
+  <% @posts.each do |post| %>
+    <h1><%= post.title %></h1>
+    <div><%= post.body %></div>
+    <br>
+    <%= link_to "Read Post", post %>
+  <% end %>
 <% end %>

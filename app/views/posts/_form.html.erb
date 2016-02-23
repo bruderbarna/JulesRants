@@ -1,0 +1,10 @@
+<%= form_for @post do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title, class: "asdasdas" %><br>
+  <br>
+  <%= f.label :body %><br>
+  <%= f.text_area :body %><br>
+  <%= f.check_box :published %><%= f.label :published %>
+  <br>
+  <%= f.button name: "commit", value: "save", type:"submit" %>
+<% end %>
