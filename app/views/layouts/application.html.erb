@@ -7,13 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
+  <div class="nav col-md-3">
+  </div>
+  <div class="col-md-9">
+    <!--
     <% if user_signed_in? %>
       <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "btn btn-primary") %>
     <% else %>
       <%= link_to('Login', new_user_session_path, class: "btn btn-primary")  %>
     <% end %>
-
     <hr>
 
     <% if !notice.blank? %>
@@ -22,6 +24,7 @@
     <% if !alert.blank? %>
       <div class="alert alert-danger"><%= alert %></div>
     <% end %>
+    -->
 
     <%= yield %>
   </div>
