@@ -1,6 +1,13 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:create, :update, :edit, :destroy, :unpublished_posts]
+
+  before_action :authenticate_user!, only: [
+    :create,
+    :update,
+    :edit,
+    :destroy,
+    :unpublished_posts
+  ]
 
   def index
     @posts = Post.where(published: true).order("created_at DESC")
