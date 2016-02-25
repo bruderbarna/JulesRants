@@ -1,11 +1,13 @@
 source 'https://rubygems.org'
 ruby "2.3.0"
 
+# Font awesome
+gem 'font-awesome-rails', '~> 4.5', '>= 4.5.0.1'
 # Bootstrap
 gem 'bootstrap3-rails'
 # Tiny MCE
 gem 'tinymce-rails'
-# Authentication plugin
+# devise, our authentication plugin
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
