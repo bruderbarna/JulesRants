@@ -2,9 +2,10 @@
   <h2>No posts :(</h2>
 <% else %>
   <% @posts.each do |post| %>
-    <h1><%= post.title %></h1>
-    <div><%= raw post.body %></div>
-    <br>
-    <%= link_to "Read Post", post %>
+    <article>
+      <h1 style="text-align: center"><%= post.title %></h1>
+      <div class="body"><%= raw post.body %></div>
+      <%= link_to "Read Post", post %>
+    </article>
   <% end %>
 <% end %>
