@@ -1,1 +1,11 @@
-<%= render "posts" %>
+<% if @posts.blank? %>
+  <h2>No posts :(</h2>
+<% else %>
+  <% @posts.each do |post| %>
+    <article>
+      <h1 style="text-align: center"><%= post.title %></h1>
+      <div class="body"><%= raw post.body %></div>
+      <%= link_to "Read Post", post %>
+    </article>
+  <% end %>
+<% end %>

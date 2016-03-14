@@ -4,75 +4,96 @@
 
 @import variables
 
-body, html
-  height: 100%
+html, body
   width: 100%
+  background: $background-color
 
 #wrapper
-  background-color: $background-color
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+  background: $background-color
+
+#sidebar-wrapper
+  margin-left: -$sidebar-width
+  width: $sidebar-width
+  left: $sidebar-width
   height: 100%
-  font-family: $font-stack
+  overflow-y: auto
+  position: fixed
+  z-index: 1000
+  background: $background-color
 
-  @import sidebar
-
-  footer
-    background: $logo-color
-    height: $footer-height
-
-    p
-      color: $background-color
-      display: flex
-      height: $footer-height
-      align-items: center
-      font-weight: bold
-      margin: 0px
-
-      &.pull-right
-        padding-right: 30px
-
-      &.pull-left
-        padding-left: 30px
-
-  #content-wrapper
-    min-height: 80%
-
-  #content
-    margin: 100px 150px 100px 150px
-    background: $content-background-color
-    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.05)
-    min-height: 80%
-    padding: 30px
-
-  #sidebar
-    margin-top: 200px
-    font-family: 'Oswald', sans-serif
+  aside#sidebar
+    padding-top: 60%
 
     h1
-      display: inline-block
-      letter-spacing: 2px
+      margin-left: 65px
+      font-family: 'Oswald', $font-stack
       text-transform: uppercase
-      font-weight: 800
-      border-bottom: solid darkgray 4px
+      font-weight: bold
+      letter-spacing: 3px
       padding-bottom: 5px
-      font-size: 45px
-      margin-left: 100px
+      border-bottom: 3px solid #b0b0b0
+      display: inline-block
 
-//.site-wrapper
-//  min-height: 100%
-//  height: auto
-//  background: $background-color
-//
-.sidebar
-  margin-top: 200px
-  font-family: 'Oswald', sans-serif
-  h1
-    display: inline-block
-    letter-spacing: 2px
+
+#page-content-wrapper
+  width: 100%
+  background: $content-background-color
+
+  .page-content
+    word-wrap: break-word
+
+#wrapper
+  padding-left: $sidebar-width + 60px
+  padding-right: 60px
+  padding-top: 100px
+
+.show-small
+  display: none
+
+footer.page-footer
+  background: #000
+  height: $footer-height
+
+  p
+    line-height: $footer-height
+    font-weight: 700
+    color: white
+
+  p.pull-left
+    padding-left: 30px
+
+  p.pull-right
+    padding-right: 30px
+
+.content
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.08)
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.08)
+  box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.08)
+  padding-bottom: 20px
+
+#login-wrapper
+  width: 50%
+  margin: 0 auto
+
+@media (max-width: 768px)
+  #sidebar-wrapper
+    display: none
+
+  #wrapper
+    padding-left: 60px
+    padding-top: 0px
+
+  .show-small
+    display: block
+
+  #page-title
+    font-family: 'Oswald', $font-stack
+    font-size: 60px
     text-transform: uppercase
-    font-weight: 800
-    border-bottom: solid darkgray 4px
+    font-weight: bold
+    letter-spacing: 3px
     padding-bottom: 5px
-    font-size: 45px
-    margin-left: 120px
-//
-//
+    margin: 20px 0px 25px 0px
+    border-bottom: 3px solid #b0b0b0
+    display: inline-block
